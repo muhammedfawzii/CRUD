@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@1,700&family=Pacifico&family=Permanent+Marker&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Work+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <div class="w-75 mx-auto p-2 bg-danger text-center">
+    <h1>Bookmarker</h1>
+    <div class="brdr"></div>
+    <div class="d-flex gap-2 justify-content-center align-items-center">
+        <i class="fa-solid fa-book-bookmark text-warning fa-2x"></i>
+        <h2>Bookmark your favorite sites</h2>
+        <i class="fa-solid fa-book-bookmark text-warning fa-2x"></i>
+    </div>
+    <div class="form-floating my-4">
+        <input oninput="validationSiteName()" list="Name"  type="text" id="siteName" class="change fw-semibold form-control" placeholder="">
+        <label for="siteName">
+            <i class="fa-solid fa-bookmark"></i>
+            Site Name
+        </label>
+        <datalist id="Name">
+            <option value="facebook"/>
+            <option value="instagram"/>
+            <option value="linkedin"/>
+                <option value="twitter"/>
+        </datalist>
+        <!-- <p id="msgSite" class="alert alert-info d-none">Invalid Pattern</p> -->
+    </div>
+    <div class="form-floating my-2">
+        <input oninput="validationSiteUrl()" type="text" id="siteUrl" class="adjust form-control" placeholder="">
+        <label for="siteUrl">
+            <i class="fa-solid fa-link"></i>
+           Site URL 
+        </label> 
+  
+        <!-- <p id="msgUrl" class="alert alert-info d-none">Invalid Pattern</p> -->
+    </div>
+    <button data-bs-toggle="modal" data-bs-target="#exampleModal" id="btnSub" onclick="submit()" class=" hide btn btn-warning fw-semibold w-25">Submit</button>
+    <!-- Modal -->
+  <div class="d-none modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div  class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header d-flex gap-1">
+        <div class="colorOne"></div>
+            <div class="colorTwo"></div>
+            <div class="colorThree"></div>
+          <!-- <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <h6 class="fw-bolder max-width">Site Name or Url is not valid, Please follow the rules below :</h6>
+          <p class="fw-semibold"><i class="fa-regular fa-circle-right"></i>Site name must contain at least 3 characters</p>
+          <p class="fw-semibold"><i class="fa-regular fa-circle-right"></i>Site URL must be a valid one</p>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="brdr my-3"></div>
+   </div>
+   <div class="my-3"> 
+    <table class="table text-center">
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Website Name</th>
+                <th>Visit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody id="data">
+           
+        </tbody>
+    </table>
+   </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
